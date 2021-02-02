@@ -7,7 +7,7 @@ namespace ParallelismAndAsynchronicity
 {
     class Program
     {
-        
+        static volatile int x, y, a, b;
         static void Main(string[] args)
         {
             #region Overusing Thread
@@ -31,7 +31,18 @@ namespace ParallelismAndAsynchronicity
 
 
 
-            #region 
+            #region Fences and Memory Barriers
+            //while (true)
+            //{
+            //    var t1 = Task.Run(FencesAndMemoryBarriers.Test1);
+            //    var t2 = Task.Run(FencesAndMemoryBarriers.Test2);
+            //    Task.WaitAll(t1, t2);
+            //    if (a==0&&b==0)
+            //    {
+            //        Console.WriteLine($"{a}, {b}");
+            //    }
+            //    x = y = a = b = 0;
+            //}
             #endregion
         }
 
